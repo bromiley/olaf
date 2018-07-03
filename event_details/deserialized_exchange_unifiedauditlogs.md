@@ -2,7 +2,7 @@
 
 First line will be denoted with: #TYPE Deserialized.Microsoft.Exchange.Data.ApplicationLogic.UnifiedAuditLogEvent
 
-These logs are typically captured using PowerShell, as opposed to other Audit Logs which can be collected via the O365 GUI.
+These logs are typically captured using PowerShell (in my experience), as opposed to other Audit Logs which can be collected via the browser.
 
 ## Parent Log Format
 
