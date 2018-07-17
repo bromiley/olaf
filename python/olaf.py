@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """OLAF - Audit Log Parser. Because logs love warm hugs too."""
@@ -17,11 +17,10 @@ import geoip2.database
 
 # Supporting variables - you can and should change these to reflect your environment.
 maxmind_db_location = './maxmind/GeoLite2-Country.mmdb'
-elastic_server = '192.168.111.128'
-elastic_port = 9200
+elastic_server = '192.168.111.128:9200'
 
-# Initialize Elastic
-es = Elasticsearch(['192.168.111.128'])
+# Initialize Elastic; insert your server IP address here
+es = Elasticsearch([elastic_server])
 
 # Initialize GeoIP
 reader = geoip2.database.Reader(maxmind_db_location)
@@ -64,6 +63,7 @@ for line in data:
         if doc.has_key('ClientIPAddress'):
             response = reader.country(doc['ClientIPAddress'])
             doc['iso_code'] = response.country.iso_code       
+        # The following is an extremely inefficient ingestion tool. Need to convert this to bulk ingestion.
         es.index(index="o365_test", doc_type="o365_audit_log", body=doc)
     except ValueError:
         j += 1
