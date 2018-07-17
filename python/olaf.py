@@ -17,7 +17,7 @@ import geoip2.database
 
 # Supporting variables - you can and should change these to reflect your environment.
 maxmind_db_location = './maxmind/GeoLite2-Country.mmdb'
-elastic_server = '192.168.111.128:9200'
+elastic_server = '<insert_elastic_server>:<insert_elastic_port>'
 
 # Initialize Elastic; insert your server IP address here
 es = Elasticsearch([elastic_server])
@@ -64,7 +64,7 @@ for line in data:
             response = reader.country(doc['ClientIPAddress'])
             doc['iso_code'] = response.country.iso_code       
         # The following is an extremely inefficient ingestion tool. Need to convert this to bulk ingestion.
-        es.index(index="o365_test", doc_type="o365_audit_log", body=doc)
+        es.index(index="o365_logs", doc_type="o365_exchange_audit_log", body=doc)
     except ValueError:
         j += 1
         print("Line {0} appears to be malformed - please check. Skipping for now.".format(i))
