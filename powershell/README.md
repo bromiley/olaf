@@ -34,12 +34,12 @@ Search through Unified Audit Logs for date range and a specific user:
 
 You can take the two queries above and filter further if you want too, using log-specific parameters. Here's a few examples:
 
-| # | Option | Description |
+| # | Option (Prepend with "-") | Description |
 | - | - | - |
-| 1 | `-Operations` | Specify logs for a specific operation. Good examples here include "New-InboxRule", "Set-InboxRule", and/or "Set-Mailbox" |
-| 2 | `-IPAddresses` | Specify a single or list (comma-separated) list of IPs that you specifically want to pull logs from. Useful for second- or third-stage analysis when you have IPs to pivot off of. |
-| 3 | `-ResultSize` | Specify the output result size; I use 5000 as a default; these logs can get large (also export will cap at this limit) |
-| 4 | ` | Export-CSV` | Pipe logs to `Export-CSV` to get them in a CSV format, which can then be ingested using other tools |
+| 1 | `Operations` | Specify logs for a specific operation. Good examples here include "New-InboxRule", "Set-InboxRule", and/or "Set-Mailbox" |
+| 2 | `IPAddresses` | Specify a single or list (comma-separated) list of IPs that you specifically want to pull logs from. Useful for second- or third-stage analysis when you have IPs to pivot off of. |
+| 3 | `ResultSize` | Specify the output result size; I use 5000 as a default; these logs can get large (also export will cap at this limit) |
+| 4 | `Export-CSV` | Pipe logs to `Export-CSV` to get them in a CSV format, which can then be ingested using other tools |
 
 ---
 
