@@ -1,0 +1,2 @@
+geoip2>=2.9.0
+elasticsearch>=6.3.0
