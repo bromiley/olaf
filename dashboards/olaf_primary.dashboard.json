@@ -1,0 +1,25 @@
+[
+  {
+    "_id": "af7becd0-8930-11e8-b272-61d6cc92b490",
+    "_type": "dashboard",
+    "_source": {
+      "title": "OLAF",
+      "hits": 0,
+      "description": "OLAF Main Dashboard",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"h\":16,\"i\":\"1\",\"w\":24,\"x\":0,\"y\":0},\"id\":\"830f2d40-7f19-11e8-a4a1-5769217135ce\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":16,\"i\":\"2\",\"w\":24,\"x\":24,\"y\":0},\"id\":\"69c5a2b0-7f19-11e8-a4a1-5769217135ce\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.3.0\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":11,\"i\":\"3\",\"w\":24,\"x\":0,\"y\":16},\"id\":\"29420c30-8930-11e8-b272-61d6cc92b490\",\"panelIndex\":\"3\",\"type\":\"search\",\"version\":\"6.3.0\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":11,\"i\":\"4\",\"w\":24,\"x\":24,\"y\":16},\"id\":\"729b3550-8930-11e8-b272-61d6cc92b490\",\"panelIndex\":\"4\",\"type\":\"search\",\"version\":\"6.3.0\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":11,\"i\":\"5\",\"w\":48,\"x\":0,\"y\":27},\"id\":\"b4ed4a40-7f19-11e8-a4a1-5769217135ce\",\"panelIndex\":\"5\",\"type\":\"search\",\"version\":\"6.3.0\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-1y",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]
