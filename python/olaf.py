@@ -46,21 +46,21 @@ for line in data:
         json_audit_data = json.loads(line[3])
         for k, v in json_audit_data.items():
             doc[k] = v
-        if doc.has_key('ExtendedProperties'):
+        if 'ExtendedProperties' in doc:
             for item in doc['ExtendedProperties']:
                     doc["ExtendedProperties.{0}".format(item["Name"])] = item["Value"]
             doc.__delitem__('ExtendedProperties')
-        if doc.has_key('Actor'):
+        if 'Actor' in doc:
             for item in doc['Actor']:
                     doc["Actor.{0}".format(item["Type"])] = item["ID"]
             doc.__delitem__('Actor')
-        if doc.has_key('ClientIP'):
+        if 'ClientIP' in doc:
             ip_addr = doc['ClientIP']
             if ':' in ip_addr:
                 ip_addr = ip_addr.split(':')[0]
             response = reader.country(ip_addr)
             doc['iso_code'] = response.country.iso_code                
-        if doc.has_key('ClientIPAddress'):
+        if 'ClientIPAddress' in doc:
             response = reader.country(doc['ClientIPAddress'])
             doc['iso_code'] = response.country.iso_code       
         # The following is an extremely inefficient ingestion tool. Need to convert this to bulk ingestion.
