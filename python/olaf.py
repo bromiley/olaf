@@ -56,7 +56,7 @@ for line in data:
             doc.__delitem__('Actor')
         if doc.has_key('ClientIP'):
             ip_addr = doc['ClientIP']
-            if ':' in ip_addr:
+            if (':' in ip_addr) and len(ip_addr.split(':'))==2: # without length check IPv6 addresses produce an error
                 ip_addr = ip_addr.split(':')[0]
             response = reader.country(ip_addr)
             doc['iso_code'] = response.country.iso_code                
